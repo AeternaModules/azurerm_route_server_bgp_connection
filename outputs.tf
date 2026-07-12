@@ -1,3 +1,7 @@
+output "route_server_bgp_connections_id" {
+  description = "Map of id values across all route_server_bgp_connections, keyed the same as var.route_server_bgp_connections"
+  value       = { for k, v in azurerm_route_server_bgp_connection.route_server_bgp_connections : k => v.id }
+}
 output "route_server_bgp_connections_name" {
   description = "Map of name values across all route_server_bgp_connections, keyed the same as var.route_server_bgp_connections"
   value       = { for k, v in azurerm_route_server_bgp_connection.route_server_bgp_connections : k => v.name }
